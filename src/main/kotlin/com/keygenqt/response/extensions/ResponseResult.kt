@@ -18,6 +18,7 @@ package com.keygenqt.response.extensions
 
 import androidx.paging.PagingSource
 import com.keygenqt.response.ResponseResult
+import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
 /**
@@ -119,7 +120,7 @@ inline infix fun <T> ResponseResult<T>.success(predicate: (data: T) -> Unit): Re
  */
 inline infix fun <T> ResponseResult<T>.error(predicate: (data: Exception) -> Unit): ResponseResult<T> {
     if (this is ResponseResult.Error) {
-        if (this.exception !is UnknownHostException) {
+        if (this.exception !is UnknownHostException && this.exception !is SocketTimeoutException) {
             predicate.invoke(this.exception)
         }
     }
@@ -135,6 +136,21 @@ inline infix fun <T> ResponseResult<T>.error(predicate: (data: Exception) -> Uni
 inline infix fun <T> ResponseResult<T>.errorUnknownHost(predicate: (data: Exception) -> Unit): ResponseResult<T> {
     if (this is ResponseResult.Error) {
         if (this.exception is UnknownHostException) {
+            predicate.invoke(this.exception)
+        }
+    }
+    return this
+}
+
+/**
+ * No internet error
+ *
+ * @since 0.0.1
+ * @author Vitaliy Zarubin
+ */
+inline infix fun <T> ResponseResult<T>.errorTimeout(predicate: (data: Exception) -> Unit): ResponseResult<T> {
+    if (this is ResponseResult.Error) {
+        if (this.exception is SocketTimeoutException) {
             predicate.invoke(this.exception)
         }
     }
