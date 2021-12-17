@@ -113,6 +113,19 @@ inline infix fun <T> ResponseResult<T>.success(predicate: (data: T) -> Unit): Re
 }
 
 /**
+ * Response Result success null data
+ *
+ * @since 0.0.10
+ * @author Vitaliy Zarubin
+ */
+inline infix fun <T> ResponseResult<T>.empty(predicate: () -> Unit): ResponseResult<T> {
+    if (this is ResponseResult.Success && this.data == null) {
+        predicate.invoke()
+    }
+    return this
+}
+
+/**
  * Response Result error
  *
  * @since 0.0.1

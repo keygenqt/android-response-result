@@ -6,7 +6,7 @@ plugins {
     id("com.diffplug.spotless")
 }
 
-version = "0.0.9"
+version = "0.0.10"
 group = "com.keygenqt.response"
 
 spotless {
