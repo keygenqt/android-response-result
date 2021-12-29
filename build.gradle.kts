@@ -6,7 +6,7 @@ plugins {
     id("com.diffplug.spotless")
 }
 
-version = "0.0.10"
+version = "0.0.11"
 group = "com.keygenqt.response"
 
 spotless {
@@ -55,9 +55,9 @@ android {
 dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("androidx.paging:paging-compose:1.0.0-alpha14")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.31")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1")
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
-    implementation("com.squareup.okhttp3:mockwebserver:4.9.1")
-    implementation("org.mockito:mockito-core:3.11.2")
+    implementation("com.squareup.okhttp3:mockwebserver:5.0.0-alpha.3")
+    implementation("org.mockito:mockito-core:4.2.0")
 }
