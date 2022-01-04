@@ -1,10 +1,10 @@
 ## Compose Requests
 
-### ![picture](https://github.com/google/material-design-icons/raw/master/png/action/extension/materialicons/18dp/1x/baseline_extension_black_18dp.png?raw=true) [About](https://keygenqt.github.io/compose-requests/)
+A library that makes it easy to interact with server responses
+
+### ![picture](https://github.com/google/material-design-icons/raw/master/png/action/extension/materialicons/18dp/1x/baseline_extension_black_18dp.png?raw=true) [More details](https://keygenqt.github.io/compose-requests/)
 
 ![picture](https://github.com/keygenqt/android-response-result/blob/master/data/just-image.png?raw=true)
-
-A library that makes it easy to interact with server responses.
 
 ## Connection
 
