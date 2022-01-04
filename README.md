@@ -2,13 +2,13 @@
 
 A library that makes it easy to interact with server responses
 
-### ![picture](https://github.com/google/material-design-icons/raw/master/png/action/extension/materialicons/18dp/1x/baseline_extension_black_18dp.png?raw=true) [More details](https://keygenqt.github.io/compose-requests/)
+### ![picture](https://github.com/google/material-design-icons/blob/master/png/action/view_day/materialicons/18dp/1x/baseline_view_day_black_18dp.png?raw=true) [More details](https://keygenqt.github.io/compose-requests/)
 
-![picture](https://github.com/keygenqt/android-response-result/blob/master/data/just-image.png?raw=true)
+![picture](https://github.com/keygenqt/compose-requests/blob/master/data/just-image.png?raw=true)
 
 ## Connection
 
-![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fartifactory.keygenqt.com%2Fartifactory%2Fopen-source%2Fcom%2Fkeygenqt%2Fresponse%2Fandroid-response-result%2Fmaven-metadata.xml)
+![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fartifactory.keygenqt.com%2Fartifactory%2Fopen-source%2Fcom%2Fkeygenqt%2Fresponse%2Fcompose-requests%2Fmaven-metadata.xml)
 
 ```gradle
 repositories {

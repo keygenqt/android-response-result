@@ -6,7 +6,7 @@ A library that makes it easy to interact with server responses.
 
 ## Connection
 
-![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fartifactory.keygenqt.com%2Fartifactory%2Fopen-source%2Fcom%2Fkeygenqt%2Fresponse%2Fandroid-response-result%2Fmaven-metadata.xml)
+![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fartifactory.keygenqt.com%2Fartifactory%2Fopen-source%2Fcom%2Fkeygenqt%2Fresponse%2Fcompose-requests%2Fmaven-metadata.xml)
 
 ```gradle
 repositories {
