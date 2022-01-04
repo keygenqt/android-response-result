@@ -21,6 +21,9 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 
+/**
+ * Feature for processing requests. Global single subscription for error handling.
+ */
 object RequestHandler {
 
     /**
