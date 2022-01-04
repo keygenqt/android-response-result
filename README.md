@@ -1,4 +1,6 @@
-## Android Response Result
+## Compose Requests
+
+### ![picture](https://github.com/google/material-design-icons/raw/master/png/action/extension/materialicons/18dp/1x/baseline_extension_black_18dp.png?raw=true) [About](https://keygenqt.github.io/compose-requests/)
 
 ![picture](https://github.com/keygenqt/android-response-result/blob/master/data/just-image.png?raw=true)
 
@@ -13,20 +15,9 @@ repositories {
     maven("https://artifactory.keygenqt.com/artifactory/open-source")
 }
 dependencies {
-    implementation("com.keygenqt.response:android-response-result:{version}")
+    implementation("com.keygenqt.response:compose-requests:{version}")
 }
 ```
-
-## Features:
-
-### ![picture](https://github.com/google/material-design-icons/blob/master/png/action/sync_alt/materialicons/18dp/1x/baseline_sync_alt_black_18dp.png?raw=true) [ResponseResult](https://keygenqt.github.io/android-response-result/ResponseResult)
-Base class for intercepting events
-
-### ![picture](https://github.com/google/material-design-icons/blob/master/png/action/extension/materialicons/18dp/1x/baseline_extension_black_18dp.png?raw=true) [Extensions](https://keygenqt.github.io/android-response-result/Extensions)
-A large set extensions for responses
-
-### ![picture](https://github.com/google/material-design-icons/blob/master/png/action/note_add/materialicons/18dp/1x/baseline_note_add_black_18dp.png?raw=true) [LocalTryExecuteWithResponse](https://keygenqt.github.io/android-response-result/LocalTryExecuteWithResponse)
-An object to catch errors and allow you to subscribe and listen to them
 
 ## License
 

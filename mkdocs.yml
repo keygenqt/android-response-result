@@ -1,0 +1,23 @@
+site_name: Compose Requests
+
+# Repository
+repo_name: 'Compose Requests'
+repo_url: 'https://github.com/keygenqt/compose-requests'
+
+# Navigation
+nav:
+  - 'Overview': index.md
+  - 'Response result': response_result.md
+  - 'Response states': response_states.md
+  - 'Request handler': request_handler.md
+
+# Configuration
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    primary: 'black'
+    accent: 'deep orange'
+  font:
+    text: 'Roboto'
+    code: 'JetBrains Mono'
