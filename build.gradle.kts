@@ -6,7 +6,11 @@ plugins {
     id("com.diffplug.spotless")
 }
 
-version = "0.0.11"
+val kotlinVersion: String = findProperty("kotlinVersion") as? String ?: "1.6.0"
+val composeVersion: String = findProperty("composeVersion") as? String ?: "1.1.0-rc01"
+val lifecycleVersion: String = findProperty("lifecycleVersion") as? String ?: "2.4.0"
+
+version = "0.0.12"
 group = "com.keygenqt.response"
 
 spotless {
@@ -21,7 +25,7 @@ publishing {
         register("aar", MavenPublication::class) {
             groupId = group.toString()
             artifactId = project.name
-            artifact("$buildDir/outputs/aar/android-response-result-$version-debug.aar")
+            artifact("$buildDir/outputs/aar/compose-requests-$version-debug.aar")
         }
     }
 }
@@ -48,16 +52,20 @@ android {
     defaultConfig {
         minSdk = 23
         targetSdk = 31
-        setProperty("archivesBaseName", "android-response-result-$version")
+        setProperty("archivesBaseName", "compose-requests-$version")
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = composeVersion
+    }
+
+    buildFeatures {
+        compose = true
     }
 }
 
 dependencies {
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("androidx.paging:paging-compose:1.0.0-alpha14")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1")
-    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
-    implementation("com.squareup.okhttp3:mockwebserver:5.0.0-alpha.3")
-    implementation("org.mockito:mockito-core:4.2.0")
+    implementation("androidx.compose.ui:ui:$composeVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinVersion")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
 }

@@ -13,15 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.keygenqt.requests
 
-package com.keygenqt.response.extensions
 
-import com.keygenqt.response.HTTPResult
-import kotlin.reflect.full.createInstance
+sealed class ResponseState {
 
-fun Int.toHTTPResult(): HTTPResult {
-    return HTTPResult::class.sealedSubclasses
-        .map { it.objectInstance ?: it.createInstance() }
-        .firstOrNull { it.code == this }
-        ?: HTTPResult.ResultUnknown()
+    /**
+     * Start state
+     */
+    object Start : ResponseState()
+
+    /**
+     * Action state
+     */
+    object Action : ResponseState()
+
+    /**
+     * Error state with value error
+     */
+    data class Error(val exception: Exception) : ResponseState()
+
+    /**
+     * Success state with data
+     */
+    data class Success<T>(val data: T) : ResponseState()
 }

@@ -1,31 +1,18 @@
-/*
- * Copyright 2021 Vitaliy Zarubin
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+package com.keygenqt.requests
 
-package com.keygenqt.response.extensions
-
-import androidx.paging.PagingSource
-import com.keygenqt.response.ResponseResult
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
 /**
+ * Response processing class
+ */
+sealed class ResponseResult<out R> {
+    data class Success<out T>(val data: T) : ResponseResult<T>()
+    data class Error(val exception: Exception) : ResponseResult<Nothing>()
+}
+
+/**
  * The number of items in the response
- *
- * @since 0.0.1
- * @author Vitaliy Zarubin
  */
 val ResponseResult<*>?.size
     get() = if (this != null
@@ -45,9 +32,6 @@ val ResponseResult<*>?.size
 
 /**
  * Checking if the response is empty
- *
- * @since 0.0.1
- * @author Vitaliy Zarubin
  */
 val ResponseResult<*>?.isEmpty get() = this.size == 0
 
@@ -66,38 +50,6 @@ val ResponseResult<*>?.isSucceeded get() = this != null && this is ResponseResul
  * @author Vitaliy Zarubin
  */
 val ResponseResult<*>?.isError get() = this != null && this is ResponseResult.Error
-
-/**
- * Extension convenient for working with PagingSource
- *
- * <pre>
- * {@code
- *   return apiService.getListUsers(search = search, offset = offset).pagingSucceeded { data ->
- *       LoadResult.Page(
- *           data = data,
- *           prevKey = if (offset == 0) null else offset,
- *           nextKey = if (data.isEmpty()) null else offset + ConstantsPaging.PAGE_LIMIT
- *       )
- *   }
- * }
- * </pre>
- *
- * @since 0.0.1
- * @author Vitaliy Zarubin
- */
-inline infix fun <T, Value : Any> ResponseResult<T>.pagingSucceeded(
-    predicate: (data: T) -> PagingSource.LoadResult<Int, Value>,
-): PagingSource.LoadResult<Int, Value> {
-    return if (this is ResponseResult.Success && this.data != null) {
-        predicate.invoke(this.data)
-    } else {
-        if (this is ResponseResult.Error) {
-            PagingSource.LoadResult.Error(this.exception)
-        } else {
-            PagingSource.LoadResult.Error(RuntimeException("Error response"))
-        }
-    }
-}
 
 /**
  * Response Result success
