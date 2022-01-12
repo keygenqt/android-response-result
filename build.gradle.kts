@@ -10,7 +10,7 @@ val kotlinVersion: String = findProperty("kotlinVersion") as? String ?: "1.6.0"
 val composeVersion: String = findProperty("composeVersion") as? String ?: "1.1.0-rc01"
 val lifecycleVersion: String = findProperty("lifecycleVersion") as? String ?: "2.4.0"
 
-version = "0.0.13"
+version = "0.0.14"
 group = "com.keygenqt.response"
 
 spotless {
