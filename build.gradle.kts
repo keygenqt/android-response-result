@@ -33,8 +33,15 @@ android {
     }
 }
 
+// https://developer.android.com/jetpack/androidx/releases/compose
+val composeVersion = "1.2.1"
+// https://github.com/Kotlin/kotlinx.coroutines/releases
+val coroutinesVersion = "1.6.4"
+// https://developer.android.com/jetpack/androidx/releases/lifecycle
+val lifecycleVersion = "2.5.1"
+
 dependencies {
-    implementation("androidx.compose.ui:ui:1.1.0-rc01")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0")
+    implementation("androidx.compose.ui:ui:$composeVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
 }
